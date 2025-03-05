@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<meta name="google-site-verification" content="AVrJgG2apjS0KBid9YDIJhKjxLiEPB_h3P-rWfkzI14" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Dora Abnormal</title>
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+      body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+      }
+    </style>
+    <style>
+		@media screen and (max-width: 360px) {
+    		img {
+        display: block;
+        width: 100%;
+    		}
+				}
+		}
+	</style>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p align="center">
+        
+      </p>
+
+
+
+
+<div style="clear:both">
+    <br>
+	
+	  <h3>Publication Calculator</h2>
+	  <p> How many papers do you need to write per year?</p>
+</div>
+ 
+
+ <h4>Take a breath... </h4>
+
+<!-- Input Fields -->
+<label for="A">How many publications do you need? (a positive number)</label>
+<input type="number" id="A" required><br>
+
+<label for="B">What's the probability that a manuscript gets accepted? (0-1)</label>
+<input type="number" id="B" required><br>
+
+<label for="C">How long (in years) is your tenure clock? (typically 6)</label>
+<input type="number" id="C" required><br>
+
+<label for="D">How long (in years) is a typical publication cycle? (typically 3 in Business)</label>
+<input type="number" id="D" required><br>
+
+<label for="E">How many manuscripts do you have from PhD? (a positive number)</label>
+<input type="number" id="E" required><br><br>
+
+<!-- Button to calculate -->
+<button onclick="calculateResult()">Calculate</button>
+
+<h4>You have  <span id="years">0</span> years to write new papers. </h4>
+<h4>You need <span id="result">0</span> new papers per year during your early years!</h4>
+
+<script>
+    function calculateResult() {
+        // Get values from the input boxes
+        let A = parseFloat(document.getElementById('A').value);
+        let B = parseFloat(document.getElementById('B').value);
+        let C = parseFloat(document.getElementById('C').value);
+        let D = parseFloat(document.getElementById('D').value);
+        let E = parseFloat(document.getElementById('E').value);
+
+        // Perform the calculation: ((A/B) - E) / (C - 1 - D)
+        let result = ((A / B) - E) / (C - 1 - D);
+		let years = (C - 1 - D);
+		result = result.toFixed(2);
+
+        // Display the result
+        document.getElementById('result').textContent = result;
+		document.getElementById('years').textContent = years;
+    }
+</script>
+
+
+
+<br>
+<br>
+<br>
+<div>
+<a href = "./index.html">back to homepage</a>
+</div>
+
+<div id="footer" ALIGN="Middle">
+<p><a href="mailto:doraabnormal@gmail.com"><img src="./figures/mail.svg" width="20"/></a></p>
+</div>
+
+    </article>
+  </body>
+</html>
